@@ -114,7 +114,7 @@ export const Public = ({ navigation}) => {
 
       <Typography
         align='center'
-        style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'2.5vh', marginTop:'3.4vh', fontSize:'9vw', color:'#4b4f54'}}
+        style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'3vh', marginTop:'3.4vh', fontSize:'5vh', color:'#4b4f54'}}
       >
         Algunos datos más
       </Typography>
@@ -151,7 +151,7 @@ export const Public = ({ navigation}) => {
         {/*  Date picker box */}
 
 
-        <Grid container style={{display:'flex', justifyContent:'left'}}>
+        <Grid container style={{display:'flex', justifyContent:'left', marginTop:'5.3vh'}}>
 
 
 
@@ -201,7 +201,7 @@ export const Public = ({ navigation}) => {
         {/*  Type of visit selector  */}
 
 
-        <FormControl fullWidth variant="outlined" style={{marginTop:'5vh'}}>
+        <FormControl fullWidth variant="outlined" style={{marginTop:'5.3vh'}}>
           <InputLabel>
             Tipo de visita
           </InputLabel>
@@ -227,7 +227,7 @@ export const Public = ({ navigation}) => {
              will switch the value  */}
 
 
-        <Box display='flex' justifyContent='space-between' marginTop='2.7vh' marginBottom='0'>
+        <Box display='flex' justifyContent='space-between' marginTop='3vh' marginBottom='0'>
           <Typography variant='caption' style={{marginTop:'0.6rem'}}>
             ¿Viene en coche?
           </Typography>

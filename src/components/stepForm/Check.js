@@ -147,7 +147,7 @@ export const Check = ({navigation}) => {
             paddingRight:'14px', 
           }}
         >
-          <div style={{listStyleType:'none', marginTop:'5.1vh'}}>
+          <div style={{listStyleType:'none', marginTop:'5vh'}}>
             <Box display='flex' justifyContent='space-between'>
               <Typography variant='h6' style={{fontWeight:'600'}}>
                 {fullName}
@@ -162,11 +162,11 @@ export const Check = ({navigation}) => {
             <ListItem disableGutters style={{paddingTop:'0'}}>
               <ListItemText
                 primary={
-                  <Typography variant='subtitle2' style={{marginTop:'-0.7vh'}}>
+                  <Typography variant='subtitle2'>
                     DNI 
                   </Typography>}
                 secondary={
-                  <Typography variant='subtitle2' style={{marginTop:'-0.6vh'}}>
+                  <Typography variant='subtitle2'>
                     {dni}
                   </Typography>}
               />
@@ -192,7 +192,7 @@ export const Check = ({navigation}) => {
           }}
         >
           <div style={{listStyleType:'none'}}>
-            <Box display='flex' justifyContent='space-between' marginBottom='-2vh' marginTop='2.2vh'>
+            <Box display='flex' justifyContent='space-between' marginTop='2vh'>
               <Typography variant='h6'>
                 Vehículo
               </Typography>
@@ -204,7 +204,7 @@ export const Check = ({navigation}) => {
                 onClick={disableVehicle}
               />
             </Box>
-            <ListItem disabled={!switchValueVehicle} disableGutters style={{marginTop:'0.5rem'}}>
+            <ListItem disabled={!switchValueVehicle} disableGutters >
               <ListItemAvatar>
                 <Avatar variant='square' style={{borderRadius:'5px', backgroundColor:'#3bbfad', transform:'scale(1.2)', marginLeft:'0.1rem'}}>
                   <Button disabled={!switchValueVehicle}>
@@ -256,7 +256,7 @@ export const Check = ({navigation}) => {
           }}
         >
           <div style={{listStyleType:'none'}}>
-            <Box display='flex' justifyContent='space-between' marginTop='2.7vh'>
+            <Box display='flex' justifyContent='space-between' marginTop='3vh'>
               <Typography variant='h6'>
                 Acompañantes
               </Typography>
@@ -269,7 +269,7 @@ export const Check = ({navigation}) => {
               />
             </Box>
 
-            <ListItem disabled={!switchValueCompanions} disableGutters style={{marginTop:'-0.5vh'}}>
+            <ListItem disabled={!switchValueCompanions} disableGutters>
               <ListItemAvatar>
                 <Avatar variant='square' style={{border:`${!switchValueCompanions ? '1px solid #c5c5c5' : 'none'}`, boxShadow:`${companionsTravel ? '0px 3px 10px 4px grey' : 'none'}`, borderRadius:'5px', backgroundColor:'white', color:'black', transform:'scale(0.8)'}}>
                   <Button 

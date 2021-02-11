@@ -95,7 +95,7 @@ export const Vehicle = ({navigation}) => {
 
       <Typography
         align='center'
-        style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'8.5vh', marginTop:'3.4vh', fontSize:'9vw', color:'#4b4f54'}}
+        style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'8vh', marginTop:'3.4vh', fontSize:'5vh', color:'#4b4f54'}}
       >
         ¿Qué vehículo usa?
       </Typography>

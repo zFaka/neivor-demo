@@ -85,7 +85,7 @@ export const Submit = () => {
 
           <Typography
             align='center'
-            style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'0vh', marginTop:'3.6vh', fontSize:'9vw', color:'#4b4f54'}}
+            style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'0vh', marginTop:'3.6vh', fontSize:'5vh', color:'#4b4f54'}}
           >
             ¡{fullName.replace(/ .*/,'')} ya está listo!
           </Typography>
@@ -104,7 +104,7 @@ export const Submit = () => {
       >
           <Typography
             align='center'
-            style={{fontWeight:'500', fontSize:'3.8vw', color:'#66696d'}}
+            style={{fontWeight:'500', fontSize:'2.2vh', color:'#66696d'}}
           >
             Necesitara este codigo para poder ingresar al condominio, recuerda enviarlo
           </Typography>

@@ -77,7 +77,7 @@ export const Personal = ({navigation}) => {
       {/*  Personal info header  */}
 
 
-      <Typography align='center' style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'6vh', marginTop:'3.4vh', fontSize:'9vw', color:'#4b4f54'}}>
+      <Typography align='center' style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'6vh', marginTop:'3.4vh', fontSize:'5vh', color:'#4b4f54'}}>
         Datos de la visita
       </Typography>
 
