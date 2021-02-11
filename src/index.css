@@ -1,13 +1,76 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face{
+  font-family: 'Jost';
+  src: local('Jost'), url(./fonts/Jost/static/Jost-Regular.ttf) format('truetype');
+  font-weight: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: Jost, sans-serif;
 }
+
+.progress-bar{
+  background: linear-gradient(to bottom, #ad3c3d 0, #fc5859 5px, #fc5859 100%);
+  top: 0;
+  height:18px;
+}
+
+.progress1{
+  width: 20%;
+  animation: one 0.7s;
+}
+.progress2{
+  width: 40%;
+  animation: two 0.7s;
+}
+.progress3{
+  width: 60%;
+  animation: three 0.7s;
+}
+.progress4{
+  width: 80%;
+  animation: four 0.7s;
+}
+.progress5{
+  width: 0%;
+  animation: five 0.5s;
+}
+@keyframes one {
+  from{width:0%}
+  to{width: 20%}
+}
+@keyframes two {
+  from{width:20%}
+  to{width: 40%}
+}
+@keyframes three {
+  from{width:40%}
+  to{width: 60%}
+}
+@keyframes four {
+  from{width:60%}
+  to{width: 80%}
+}
+@keyframes five {
+  0%{width:80%; opacity:1}
+  100%{width: 100%;opacity:0}
+}
+
+
+
+.MuiFormControl-marginNormal{
+  width:100%;
+}
+
+.MuiSwitch-root.check{
+  margin-right: -1rem; 
+}
+
+.fav{
+  color: grey !important;
+  justify-content:space-between!important;
+}
+
+.MuiButton-text.vehicle{
+  padding: 3.5vw !important;
+}   
