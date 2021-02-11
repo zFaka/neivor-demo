@@ -11,6 +11,7 @@ import {Box, Grid} from '@material-ui/core';
 import {useDispatch} from 'react-redux';
 import {useSwitch} from '../../hook/useSwitch';
 import {usePersonalForm} from '../../hook/usePersonalForm';
+import {useStyle} from '../../hook/useStyle';
 
 //Actions
 
@@ -20,6 +21,14 @@ import {deleteEndDateData, sendDataOfPage2} from '../../actions/form';
 
 
 export const Public = ({ navigation}) => {
+
+
+
+
+  // Style Switches
+
+
+  const classes = useStyle();
 
 
 
@@ -142,6 +151,15 @@ export const Public = ({ navigation}) => {
             checked={switchValueEndDate}
             onChange={switchBooleanEndDate}
             onClick={disableEndDate}
+
+            classes={{
+              root: classes.root,
+              switchBase: classes.switchBase,
+              thumb: classes.thumb,
+              track: classes.track,
+              checked: classes.checked,
+            }}
+
           />
         </Box>
 
@@ -160,8 +178,8 @@ export const Public = ({ navigation}) => {
 
 
           <Grid item xs={switchValueEndDate ? 6 : 12} style={{transition:'0.3s ease'}}>
-            <Box p={1}>
               <KeyboardDatePicker
+                className='date start-date'
                 variant='outlined'
                 id="date-picker-dialog-1" 
                 label="Dia de inicio" 
@@ -170,7 +188,6 @@ export const Public = ({ navigation}) => {
                 onChange={handleStartDatePickerChange}
                 KeyboardButtonProps={{
                   'aria-label': 'change date',}}/>
-            </Box>
           </Grid>
 
 
@@ -182,8 +199,8 @@ export const Public = ({ navigation}) => {
           <Grid item xs={6} 
             style={{display:`${!switchValueEndDate ? 'none' : ''}`}}
           >
-            <Box p={1}>
               <KeyboardDatePicker
+                className='date end-date'
                 id="date-picker-dialog-2"
                 label="Dia de fin"
                 format='dd/MM/yyyy'
@@ -191,7 +208,6 @@ export const Public = ({ navigation}) => {
                 onChange={handleEndDatePickerChange}
                 KeyboardButtonProps={{
                   'aria-label': 'change date',}}/>
-            </Box>
           </Grid>
         </Grid>
 
@@ -202,7 +218,7 @@ export const Public = ({ navigation}) => {
 
 
         <FormControl fullWidth variant="outlined" style={{marginTop:'5.3vh'}}>
-          <InputLabel>
+          <InputLabel className='inmg'>
             Tipo de visita
           </InputLabel>
 
@@ -235,7 +251,17 @@ export const Public = ({ navigation}) => {
           <Switch 
             color='primary'
             checked={switchValueComeInCar}
-            onChange={switchBooleanComeInCar}/>
+            onChange={switchBooleanComeInCar}
+
+            classes={{
+              root: classes.root,
+              switchBase: classes.switchBase,
+              thumb: classes.thumb,
+              track: classes.track,
+              checked: classes.checked,
+            }}
+
+          />
         </Box>
 
 
@@ -244,7 +270,7 @@ export const Public = ({ navigation}) => {
 
 
 
-        {/*  Next page  
+      {/*  Next page  
 
              If is clicked will change 
              to the next page and Submit 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import {Grid, IconButton, Typography} from '@material-ui/core';
+import {IconButton, Typography} from '@material-ui/core';
 import QRCode from 'qrcode.react';
 import {useSelector} from 'react-redux';
 

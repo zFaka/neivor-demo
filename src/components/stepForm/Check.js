@@ -20,6 +20,7 @@ import MotorcycleIcon from '@material-ui/icons/Motorcycle';
 import {useDispatch, useSelector} from 'react-redux';
 import {useCounter} from '../../hook/useCounter';
 import {useSwitch} from '../../hook/useSwitch';
+import {useStyle} from '../../hook/useStyle';
 
 
 // Actions
@@ -30,6 +31,14 @@ import {deleteVehicleData, sendDataOfPage4} from '../../actions/form';
 
 
 export const Check = ({navigation}) => {
+
+
+
+
+  // Style Switches
+
+
+  const classes = useStyle();
 
 
 
@@ -203,6 +212,14 @@ export const Check = ({navigation}) => {
                 checked={switchValueVehicle}
                 onChange={switchBooleanVehicle}
                 onClick={disableVehicle}
+
+            classes={{
+              root: classes.root,
+              switchBase: classes.switchBase,
+              thumb: classes.thumb,
+              track: classes.track,
+              checked: classes.checked,
+            }}
               />
             </Box>
             <ListItem disabled={!switchValueVehicle} disableGutters >
@@ -267,6 +284,14 @@ export const Check = ({navigation}) => {
                 checked={switchValueCompanions}
                 onChange={switchBooleanCompanions}
                 onClick={reset}
+
+            classes={{
+              root: classes.root,
+              switchBase: classes.switchBase,
+              thumb: classes.thumb,
+              track: classes.track,
+              checked: classes.checked,
+            }}
               />
             </Box>
 

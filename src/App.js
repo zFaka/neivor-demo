@@ -8,7 +8,14 @@ import { store } from './store/store';
 // pick a date util library
 import DateFnsUtils from '@date-io/date-fns';
 
+
+
+
+// Material UI main styles 
+
+
 const theme = createMuiTheme({
+
   typography: {
     "fontFamily": `"Jost"`, 
     button:{
@@ -28,7 +35,16 @@ const theme = createMuiTheme({
       contrastText:'#fff'
     }
   }, 
+  cssLabel: {
+    marginTop:'-6px',
+  },
 })
+
+
+
+// This functions provide theme,
+// the picker utils and the
+// tree state to all the components
 
 function App() {
   return (

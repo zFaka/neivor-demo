@@ -17,6 +17,7 @@ import MotorcycleIcon from '@material-ui/icons/Motorcycle';
 import {useDispatch} from 'react-redux';
 import {usePersonalForm} from '../../hook/usePersonalForm';
 import {useVehicleButtons} from '../../hook/useVehicleButtons';
+import {useStyle} from '../../hook/useStyle';
 
 
 //Actions
@@ -27,6 +28,14 @@ import {sendDataOfPage3} from '../../actions/form';
 
 
 export const Vehicle = ({navigation}) => {
+
+
+
+
+  // Style Switches
+
+
+  const classes = useStyle();
 
 
 
@@ -178,6 +187,9 @@ export const Vehicle = ({navigation}) => {
           onChange={handleInputChange}
           type='number'
           autoComplete='off'
+          InputLabelProps={{
+            classes: {
+              root: classes.cssLabel}}}
 
           label='Matrícula'
           margin='normal'

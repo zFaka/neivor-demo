@@ -9,6 +9,7 @@ import {Grid, Typography} from '@material-ui/core';
 
 import {useDispatch} from 'react-redux';
 import {usePersonalForm} from '../../hook/usePersonalForm';
+import {useStyle} from '../../hook/useStyle';
 
 
 // Actions
@@ -19,6 +20,14 @@ import {sendDataOfPage1} from '../../actions/form';
 
 
 export const Personal = ({navigation}) => {
+
+
+
+
+  // Style Switches
+
+
+  const classes = useStyle();
 
 
 
@@ -97,6 +106,9 @@ export const Personal = ({navigation}) => {
           name='fullName'
           value={fullName}
           onChange={handleInputChange}
+          InputLabelProps={{
+            classes: {
+              root: classes.cssLabel}}}
 
           label='Nombre y apellido'
           margin='normal'
@@ -116,10 +128,12 @@ export const Personal = ({navigation}) => {
           name='dni'
           value={dni}
           onChange={handleInputChange}
+          InputLabelProps={{
+            classes: {
+              root: classes.cssLabel}}}
 
           style={{marginTop:'5vh', color:'black'}}
           label='DNI'
-          margin='normal'
           variant='outlined'
           fullWidth
         />

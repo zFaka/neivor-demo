@@ -66,7 +66,49 @@ body {
   margin-right: -1rem; 
 }
 
+.MuiSwitch-thumb{
+  border: 1px solid #4bc0b0;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
 .fav{
   color: grey !important;
   justify-content:space-between!important;
+}
+
+.MuiInput-underline:before{
+  border-bottom: none !important;
+}
+
+.MuiInputBase-root.MuiInput-root.MuiInput-underline.MuiInputBase-formControl.MuiInput-formControl.MuiInputBase-adornedEnd{
+  border: 1px solid #c4c4c4;
+}
+
+.MuiInput-root{
+  padding:5px 10px 5px 10px;
+  border-radius: 5px;
+}
+
+
+.MuiFormControl-root div div button{
+  padding:0 !important;
+  color:black;
+  transform: scale(1.3);
+}
+
+/*Margin of Date pickers*/
+.MuiFormControl-root.start-date{
+  margin-right: 5px !important;
+}
+.MuiFormControl-root.end-date{
+  margin-left: 5px !important;
+}
+
+/*Inputs padding*/
+.MuiOutlinedInput-input{
+  padding: 12px 14px! important;
+}
+/*Inputs Margin*/
+.inmg{
+  margin-top:-6px
 }
