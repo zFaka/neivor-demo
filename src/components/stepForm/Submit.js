@@ -123,7 +123,6 @@ export const Submit = () => {
 
         <div style={{display:'flex', justifyContent:'center', marginTop:'6vh'}}>
           <QRCode 
-            size={246}
             id={`${fullName}${dni}`} 
             level={"H"}
             value={JSON.stringify({fullName, dni})}/>

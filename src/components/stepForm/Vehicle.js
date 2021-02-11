@@ -111,64 +111,60 @@ export const Vehicle = ({navigation}) => {
         {/*  Vehicles buttons  */}
 
 
-        <Grid container style={{marginBottom:'5vh'}}>
-          <Grid item xs={4} style={{textAlign:'center'}}>
-            <Button
-              onClick={chooseCar}
+        <div style={{
+          marginBottom:'5vh',
+          display:'flex',
+          justifyContent:'space-between'}}
+        >
+          <Button
+            onClick={chooseCar}
 
+            style={{
+
+              backgroundColor:`${vehicleValue.booleanValue.car ?'#3bbfad':'white'}`, 
+              border:`1px solid ${vehicleValue.booleanValue.car ?'#35ac9b':'black'}`, 
+
+              borderRadius:'5px', 
+              padding:'0'}}
+          >
+            <DriveEtaIcon
               style={{
+              fontSize: 'max(15vh, 65px)'}}
+            />
+          </Button>
 
-                backgroundColor:`${vehicleValue.booleanValue.car ?'#3bbfad':'white'}`, 
-                border:`1px solid ${vehicleValue.booleanValue.car ?'#35ac9b':'black'}`, 
+          <Button
+            onClick={chooseBike}
 
-                borderRadius:'5px',
-                transform:'scale(1.5)'}}
-              className='vehicle'
-            >
-              <DriveEtaIcon fontSize='large'
-                className='vehicle-icon'
-              />
-            </Button>
-          </Grid>
+            style={{
 
-          <Grid item xs={4} style={{textAlign:'center'}}>
-            <Button
-              onClick={chooseBike}
+              backgroundColor:`${vehicleValue.booleanValue.bike ?'#3bbfad':'white'}`, 
+              border:`1px solid ${vehicleValue.booleanValue.bike ?'#35ac9b':'black'}`, 
 
-              style={{
+              padding:'10px', 
+              borderRadius:'5px'}}
+          >
+            <DirectionsBikeIcon
+              style={{fontSize: 'max(12vh, 45px)'}}
+            />
+          </Button>
 
-                backgroundColor:`${vehicleValue.booleanValue.bike ?'#3bbfad':'white'}`, 
-                border:`1px solid ${vehicleValue.booleanValue.bike ?'#35ac9b':'black'}`, 
+          <Button
+            onClick={chooseMotorcycle}
 
-                borderRadius:'5px', 
-                transform:'scale(1.5)'}}
-              className='vehicle'
-            >
-              <DirectionsBikeIcon fontSize='large'
-                className='vehicle-icon'
-              />
-            </Button>
-          </Grid>
+            style={{
 
-          <Grid item xs={4} style={{textAlign:'center'}}>
-            <Button
-              onClick={chooseMotorcycle}
+              backgroundColor:`${vehicleValue.booleanValue.motorbike ?'#3bbfad':'white'}`, 
+              border:`1px solid ${vehicleValue.booleanValue.motorbike ?'#35ac9b':'black'}`, 
 
-              style={{
-
-                backgroundColor:`${vehicleValue.booleanValue.motorbike ?'#3bbfad':'white'}`, 
-                border:`1px solid ${vehicleValue.booleanValue.motorbike ?'#35ac9b':'black'}`, 
-
-                borderRadius:'5px', 
-                transform:'scale(1.5)'}}
-              className='vehicle'
-            >
-              <MotorcycleIcon fontSize='large'
-                className='vehicle-icon'
-              />
-            </Button>
-          </Grid>
-        </Grid>
+              padding:'0', 
+              borderRadius:'5px'}}
+          >
+            <MotorcycleIcon
+              style={{fontSize: 'max(15vh, 65px)'}}
+            />
+          </Button>
+        </div>
 
 
 

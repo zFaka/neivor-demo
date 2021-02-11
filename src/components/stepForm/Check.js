@@ -132,6 +132,7 @@ export const Check = ({navigation}) => {
 
 
 
+
         {/*  Personal box  */}
 
 
@@ -311,6 +312,8 @@ export const Check = ({navigation}) => {
           </div>
         </Grid>
 
+      </Container>
+
 
 
 
@@ -354,37 +357,34 @@ export const Check = ({navigation}) => {
           </Button>
         </Grid>
 
-      </Container>
 
 
 
+        {/*  Next page button  */}
 
 
-      {/*  Next page button  */}
-
-
-      <Grid item xs={12}
-        style={{
-          position: 'fixed',
-          width:'100%', 
-          maxWidth:'396px', 
-          minWidth:'0', 
-          paddingLeft:'18px', 
-          paddingRight:'18px',
-          left: '50%',
-          top: '90%',
-          transform: 'translate(-50%, -50%)'}}
-      >
-        <Button
-          onClick={handleNextPage}
-
-          color='primary'
-          variant='contained'
-          fullWidth
+        <Grid item xs={12}
+          style={{
+            position: 'fixed',
+            width:'100%', 
+            maxWidth:'396px', 
+            minWidth:'0', 
+            paddingLeft:'18px', 
+            paddingRight:'18px',
+            left: '50%',
+            top: '90%',
+            transform: 'translate(-50%, -50%)'}}
         >
-          Listo 
-        </Button>
-      </Grid>
+          <Button
+            onClick={handleNextPage}
+
+            color='primary'
+            variant='contained'
+            fullWidth
+          >
+            Listo 
+          </Button>
+        </Grid>
     </>
   )
 }
