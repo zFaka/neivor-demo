@@ -9,6 +9,11 @@ body {
   font-family: Jost, sans-serif;
 }
 
+
+
+
+/*Progress bar*/
+
 .progress-bar{
   background: linear-gradient(to bottom, #ad3c3d 0, #fc5859 5px, #fc5859 100%);
   top: 0;
@@ -58,12 +63,9 @@ body {
 
 
 
+/*Switchs*/
 .MuiFormControl-marginNormal{
   width:100%;
-}
-
-.MuiSwitch-root.check{
-  margin-right: -1rem; 
 }
 
 .MuiSwitch-thumb{
@@ -71,11 +73,24 @@ body {
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 
+/*check switches*/
+.MuiSwitch-root.check{
+  margin-right: -1rem; 
+}
+
+
+
+
+/*Favourite button*/
 .fav{
   color: grey !important;
   justify-content:space-between!important;
 }
 
+
+
+
+/*Input style*/
 .MuiInput-underline:before{
   border-bottom: none !important;
 }
@@ -90,6 +105,10 @@ body {
 }
 
 
+
+
+/*Date pickers */
+
 .MuiFormControl-root div div button{
   padding:0 !important;
   color:black;
@@ -100,12 +119,9 @@ body {
 
 
 /*Inputs padding*/
+
 .MuiOutlinedInput-input{
 padding: 12px 14px! important;}
 
-
-
-
-/*Inputs Margin*/
 .inmg{
 margin-top:-6px;}
