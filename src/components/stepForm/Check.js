@@ -13,6 +13,7 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import DirectionsBikeIcon from '@material-ui/icons/DirectionsBike';
 import MotorcycleIcon from '@material-ui/icons/Motorcycle';
+import BlockIcon from '@material-ui/icons/Block';
 
 
 // Hooks
@@ -26,6 +27,7 @@ import {useStyle} from '../../hook/useStyle';
 // Actions
 
 import {deleteVehicleData, sendDataOfPage4} from '../../actions/form';
+import Swal from 'sweetalert2';
 
 
 
@@ -117,6 +119,13 @@ export const Check = ({navigation}) => {
       switchValueVehicle,
       switchValueCompanions,
       counterValue))
+    Swal.fire({
+      icon: 'success',
+      iconColor:'#3bbfad', 
+      title: 'Visita registrada correctamente',
+      showConfirmButton: false,
+      timer: 1000
+    })
     go('submit')};
 
 
@@ -213,22 +222,23 @@ export const Check = ({navigation}) => {
                 onChange={switchBooleanVehicle}
                 onClick={disableVehicle}
 
-            classes={{
-              root: classes.root,
-              switchBase: classes.switchBase,
-              thumb: classes.thumb,
-              track: classes.track,
-              checked: classes.checked,
-            }}
+                classes={{
+                  root: classes.root,
+                  switchBase: classes.switchBase,
+                  thumb: classes.thumb,
+                  track: classes.track,
+                  checked: classes.checked,
+                }}
               />
             </Box>
             <ListItem disabled={!switchValueVehicle} disableGutters >
               <ListItemAvatar>
                 <Avatar variant='square' style={{borderRadius:'5px', backgroundColor:'#3bbfad', transform:'scale(1.2)', marginLeft:'0.1rem'}}>
                   <Button disabled={!switchValueVehicle}>
-                    {   vehicleType.stringValue === 'car' ? <DriveEtaIcon/> : 
-                        vehicleType.stringValue === 'bike' ? <DirectionsBikeIcon/> :
-                        vehicleType.stringValue === 'motorcycle' ? <MotorcycleIcon/> : null}
+                    {   vehicleType.stringValue === 'Going Car' ? <DriveEtaIcon/> : 
+                        vehicleType.stringValue === 'Going Bike' ? <DirectionsBikeIcon/> :
+                        vehicleType.stringValue === 'Going Motorcycle' ? <MotorcycleIcon/> :
+                        <BlockIcon/>}
                   </Button>
                 </Avatar>
               </ListItemAvatar>
@@ -285,13 +295,13 @@ export const Check = ({navigation}) => {
                 onChange={switchBooleanCompanions}
                 onClick={reset}
 
-            classes={{
-              root: classes.root,
-              switchBase: classes.switchBase,
-              thumb: classes.thumb,
-              track: classes.track,
-              checked: classes.checked,
-            }}
+                classes={{
+                  root: classes.root,
+                  switchBase: classes.switchBase,
+                  thumb: classes.thumb,
+                  track: classes.track,
+                  checked: classes.checked,
+                }}
               />
             </Box>
 
@@ -342,7 +352,7 @@ export const Check = ({navigation}) => {
 
 
 
-        {/*  Next page  
+      {/*  Next page  
 
              Clicking on either one will 
              switch you to the next page
@@ -351,65 +361,65 @@ export const Check = ({navigation}) => {
 
 
 
-        {/*  Favourite button  */}
+      {/*  Favourite button  */}
 
 
-        <Grid item xs={12}
+      <Grid item xs={12}
+        style={{
+          position: 'fixed',
+          width:'100%', 
+          maxWidth:'396px', 
+          minWidth:'0', 
+          paddingLeft:'17px', 
+          paddingRight:'17px',
+          left: '50%',
+          top: '81%',
+          transform: 'translate(-50%, -50%)'}}
+      >
+        <Button
+          onClick={handleNextPage}
+          endIcon={<StarBorderIcon fontSize='large' style={{color:'#f4b42a', transform:'scale(1.3)'}}/>}
+          className='fav'
+
           style={{
-            position: 'fixed',
-            width:'100%', 
-            maxWidth:'396px', 
-            minWidth:'0', 
-            paddingLeft:'17px', 
-            paddingRight:'17px',
-            left: '50%',
-            top: '81%',
-            transform: 'translate(-50%, -50%)'}}
+            boxShadow:'0px 3px 10px 1px lightGrey',
+            border:'none'}}
+          color='primary'
+          variant='outlined'
+          fullWidth
         >
-          <Button
-            onClick={handleNextPage}
-            endIcon={<StarBorderIcon fontSize='large' style={{color:'#f4b42a', transform:'scale(1.3)'}}/>}
-            className='fav'
-
-            style={{
-              boxShadow:'0px 3px 10px 1px lightGrey',
-              border:'none'}}
-            color='primary'
-            variant='outlined'
-            fullWidth
-          >
-            Recordar en favoritos 
-          </Button>
-        </Grid>
+          Recordar en favoritos 
+        </Button>
+      </Grid>
 
 
 
 
-        {/*  Next page button  */}
+      {/*  Next page button  */}
 
 
-        <Grid item xs={12}
-          style={{
-            position: 'fixed',
-            width:'100%', 
-            maxWidth:'396px', 
-            minWidth:'0', 
-            paddingLeft:'18px', 
-            paddingRight:'18px',
-            left: '50%',
-            top: '90%',
-            transform: 'translate(-50%, -50%)'}}
+      <Grid item xs={12}
+        style={{
+          position: 'fixed',
+          width:'100%', 
+          maxWidth:'396px', 
+          minWidth:'0', 
+          paddingLeft:'18px', 
+          paddingRight:'18px',
+          left: '50%',
+          top: '90%',
+          transform: 'translate(-50%, -50%)'}}
+      >
+        <Button
+          onClick={handleNextPage}
+
+          color='primary'
+          variant='contained'
+          fullWidth
         >
-          <Button
-            onClick={handleNextPage}
-
-            color='primary'
-            variant='contained'
-            fullWidth
-          >
-            Listo 
-          </Button>
-        </Grid>
+          Listo 
+        </Button>
+      </Grid>
     </>
   )
 }

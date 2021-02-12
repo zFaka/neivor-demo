@@ -23,19 +23,12 @@ import {useStyle} from '../../hook/useStyle';
 //Actions
 
 import {sendDataOfPage3} from '../../actions/form';
+import {useValidation} from '../../hook/useValidation';
 
 
 
 
 export const Vehicle = ({navigation}) => {
-
-
-
-
-  // Style Switches
-
-
-  const classes = useStyle();
 
 
 
@@ -50,7 +43,13 @@ export const Vehicle = ({navigation}) => {
     chooseMotorcycle
   ] = useVehicleButtons();
 
+  const [
+    validateString, 
+    validateNumber
+  ] = useValidation();
+
   const dispatch = useDispatch();
+  const classes = useStyle();
 
 
 
@@ -80,8 +79,20 @@ export const Vehicle = ({navigation}) => {
 
 
   const handleNextPage = () => {
-    dispatch(sendDataOfPage3(vehicleValue, numPlate))
-    return navigation.next()};
+
+    const vehicleTypeValidationValue = validateString(vehicleValue.stringValue);
+    const numberPlateValidationValue = validateNumber(numPlate);
+
+    if(
+      vehicleTypeValidationValue && 
+      numberPlateValidationValue
+    ){
+      dispatch(sendDataOfPage3(
+        vehicleValue,
+        numPlate))
+      return navigation.next()
+    }
+  };
 
 
 
@@ -138,7 +149,7 @@ export const Vehicle = ({navigation}) => {
           >
             <DriveEtaIcon
               style={{
-              fontSize: 'max(15vh, 65px)'}}
+                fontSize: 'max(15vh, 65px)'}}
             />
           </Button>
 

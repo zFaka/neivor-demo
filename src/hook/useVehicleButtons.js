@@ -39,7 +39,7 @@ export const useVehicleButtons = () => {
     const chooseCar = () => {
         setVehicleValue({
             ...vehicleValue,
-            stringValue:'car',  
+            stringValue:'Going Car',  
             booleanValue:{
                 car:true, 
                 bike:false, 
@@ -58,7 +58,7 @@ export const useVehicleButtons = () => {
     const chooseBike = () => {
         setVehicleValue({
             ...vehicleValue,
-            stringValue:'bike', 
+            stringValue:'Going Bike', 
             booleanValue:{
                 car:false, 
                 bike:true, 
@@ -77,7 +77,7 @@ export const useVehicleButtons = () => {
     const chooseMotocycle = () => {
         setVehicleValue({
             ...vehicleValue,
-            stringValue:'motorcycle', 
+            stringValue:'Going Motorcycle', 
             booleanValue:{
                 car:false, 
                 bike:false, 

@@ -16,6 +16,7 @@ import {useStyle} from '../../hook/useStyle';
 //Actions
 
 import {deleteEndDateData, sendDataOfPage2} from '../../actions/form';
+import {useValidation} from '../../hook/useValidation';
 
 
 
@@ -47,6 +48,12 @@ export const Public = ({ navigation}) => {
     switchBooleanEndDate,
     switchBooleanComeInCar
   ] = useSwitch();
+  const [
+    , 
+    , 
+    validateDate, 
+    validateSelector
+  ] = useValidation();
 
 
 
@@ -93,13 +100,26 @@ export const Public = ({ navigation}) => {
 
 
   const handleNextPage = () => {
-    dispatch(sendDataOfPage2(
-      switchValueEndDate,
-      startDateValue.startDate,
-      endDateValue.endDate,
-      visitType,
-      switchValueComeInCar))
-    return navigation.next()};
+
+    const startDateValidationValue = validateDate(startDateValue.startDate);
+    const endDateValidationValue = validateDate(startDateValue.endDate);
+    const selectorValidationValue = validateSelector(visitType);
+
+    if(
+      startDateValidationValue && 
+      endDateValidationValue &&
+      selectorValidationValue
+    ){
+      dispatch(sendDataOfPage2(
+        switchValueEndDate,
+        startDateValue.startDate,
+        endDateValue.endDate,
+        visitType,
+        switchValueComeInCar))
+      return navigation.next()
+    }
+
+  };
 
 
 
@@ -178,16 +198,16 @@ export const Public = ({ navigation}) => {
 
 
           <Grid item xs={switchValueEndDate ? 6 : 12} style={{transition:'0.3s ease'}}>
-              <KeyboardDatePicker
-                className='date start-date'
-                variant='outlined'
-                id="date-picker-dialog-1" 
-                label="Dia de inicio" 
-                format='dd/MM/yyyy'
-                value={startDateValue.startDate}
-                onChange={handleStartDatePickerChange}
-                KeyboardButtonProps={{
-                  'aria-label': 'change date',}}/>
+            <KeyboardDatePicker
+              className='date start-date'
+              variant='outlined'
+              id="date-picker-dialog-1" 
+              label="Dia de inicio" 
+              format='dd/MM/yyyy'
+              value={startDateValue.startDate}
+              onChange={handleStartDatePickerChange}
+              KeyboardButtonProps={{
+                'aria-label': 'change date',}}/>
           </Grid>
 
 
@@ -199,15 +219,15 @@ export const Public = ({ navigation}) => {
           <Grid item xs={6} 
             style={{display:`${!switchValueEndDate ? 'none' : ''}`}}
           >
-              <KeyboardDatePicker
-                className='date end-date'
-                id="date-picker-dialog-2"
-                label="Dia de fin"
-                format='dd/MM/yyyy'
-                value={endDateValue.endDate}
-                onChange={handleEndDatePickerChange}
-                KeyboardButtonProps={{
-                  'aria-label': 'change date',}}/>
+            <KeyboardDatePicker
+              className='date end-date'
+              id="date-picker-dialog-2"
+              label="Dia de fin"
+              format='dd/MM/yyyy'
+              value={endDateValue.endDate}
+              onChange={handleEndDatePickerChange}
+              KeyboardButtonProps={{
+                'aria-label': 'change date',}}/>
           </Grid>
         </Grid>
 

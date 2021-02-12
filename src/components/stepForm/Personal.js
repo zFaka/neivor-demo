@@ -15,6 +15,7 @@ import {useStyle} from '../../hook/useStyle';
 // Actions
 
 import {sendDataOfPage1} from '../../actions/form'; 
+import {useValidation} from '../../hook/useValidation';
 
 
 
@@ -24,18 +25,15 @@ export const Personal = ({navigation}) => {
 
 
 
-  // Style Switches
-
-
-  const classes = useStyle();
-
-
-
-
   // leave the functions handy 
 
 
   const dispatch = useDispatch();
+  const classes = useStyle();
+  const [
+    validateString, 
+    validateNumber
+  ] = useValidation();
 
 
 
@@ -63,9 +61,19 @@ export const Personal = ({navigation}) => {
 
 
   const handleNextPage = () => {
-    dispatch(sendDataOfPage1(fullName, dni))
-    return navigation.next()};
 
+    const stringValidationValue = validateString(fullName);
+    const numberValidationValue = validateNumber(dni);
+
+    if(
+      stringValidationValue && 
+      numberValidationValue
+    ){
+      dispatch(sendDataOfPage1(fullName, dni))
+      navigation.next()
+    }
+
+  };
 
 
 

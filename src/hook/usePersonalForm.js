@@ -68,7 +68,7 @@ export const usePersonalForm = () => {
 
 
 
-    
+
     // Handle start date value and update it
 
     const handleStartDatePickerChange = ( date ) => {
@@ -93,20 +93,20 @@ export const usePersonalForm = () => {
 
     // Returns the requested values 
     // from where they were called
-    
-    
+
+
     return [
 
 
         // Form functions for normal values
-        
+
         values,
         handleInputChange,
         reset ,
 
 
         // Form functions for date values
-        
+
         startDateValue,
         endDateValue,
         handleStartDatePickerChange,

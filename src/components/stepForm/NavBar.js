@@ -28,7 +28,7 @@ export const NavBar = ({navigation}) => {
             fontSize='large'/>
         </IconButton>
         <Typography variant="h6">
-          Registrar Vista
+          Registrar Visita
         </Typography>
       </Toolbar>
     </AppBar>
