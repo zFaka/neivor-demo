@@ -45,7 +45,7 @@ export const useValidation = () => {
 
     const validateNumber = (num) => {
 
-        if(typeof Number(num) === 'number' && num !== ''){
+        if(typeof Number(num) === 'number' && num !== '' && num > 0){
             return true}
 
         else{
@@ -106,6 +106,26 @@ export const useValidation = () => {
 
 
 
+    // Validate Vehicle buttons 
+
+
+    const validateVehicle = (str) => {
+
+        if(pattern.test(str)===true && str !== ''){
+            return true}
+
+        else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Elija el tipo de vehículo',
+                timer: 900,
+                timerProgressBar: true,
+                showConfirmButton: false})}
+    }
+
+
+
+
     // Returns the requested values 
     // from where they were called
 
@@ -115,9 +135,10 @@ export const useValidation = () => {
         validateString,
         validateNumber,
         validateDate, 
-        validateSelector
+        validateSelector, 
+        validateVehicle,
 
-    ];
+    ]
 
 
 }

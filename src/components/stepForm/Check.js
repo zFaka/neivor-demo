@@ -26,7 +26,7 @@ import {useStyle} from '../../hook/useStyle';
 
 // Actions
 
-import {deleteVehicleData, sendDataOfPage4} from '../../actions/form';
+import {changeIndexPage, deleteVehicleData, sendDataOfPage4} from '../../actions/form';
 import Swal from 'sweetalert2';
 
 
@@ -84,12 +84,10 @@ export const Check = ({navigation}) => {
 
   const [ 
     ,
-    ,
-    switchValueVehicle,
+    switchValueComeInVehicle,
     switchValueCompanions,
     ,
-    ,
-    switchBooleanVehicle,
+    switchBooleanComeInVehicle,
     switchBooleanCompanions
   ] = useSwitch();
 
@@ -115,18 +113,24 @@ export const Check = ({navigation}) => {
 
 
   const handleNextPage = () => {
+
     dispatch(sendDataOfPage4(
-      switchValueVehicle,
+      switchValueComeInVehicle,
       switchValueCompanions,
       counterValue))
+
     Swal.fire({
       icon: 'success',
       iconColor:'#3bbfad', 
       title: 'Visita registrada correctamente',
       showConfirmButton: false,
-      timer: 1000
-    })
-    go('submit')};
+      timer: 1000})
+
+    dispatch(changeIndexPage(5))
+    go('submit')
+
+
+  };
 
 
 
@@ -195,75 +199,63 @@ export const Check = ({navigation}) => {
 
 
 
-        {/*  Vehicle box  */}
+        {/*  Vehicle box
+        show vehicle bos if use vehicle */}
 
 
-        <Grid item xs={12}
-          style={{
-            width:'100%', 
-            maxWidth:'444px', 
-            minWidth:'0', 
-            marginLeft: 'auto',
-            marginRight:'auto', 
-            display: 'block',
-            paddingLeft:'14px',
-            paddingRight:'14px', 
-          }}
-        >
-          <div style={{listStyleType:'none'}}>
-            <Box display='flex' justifyContent='space-between' marginTop='2vh'>
-              <Typography variant='h6'>
-                Vehículo
-              </Typography>
-              <Switch
-                className='check'
-                color='primary'
-                checked={switchValueVehicle}
-                onChange={switchBooleanVehicle}
-                onClick={disableVehicle}
-
-                classes={{
-                  root: classes.root,
-                  switchBase: classes.switchBase,
-                  thumb: classes.thumb,
-                  track: classes.track,
-                  checked: classes.checked,
-                }}
-              />
-            </Box>
-            <ListItem disabled={!switchValueVehicle} disableGutters >
-              <ListItemAvatar>
-                <Avatar variant='square' style={{borderRadius:'5px', backgroundColor:'#3bbfad', transform:'scale(1.2)', marginLeft:'0.1rem'}}>
-                  <Button disabled={!switchValueVehicle}>
-                    {   vehicleType.stringValue === 'Going Car' ? <DriveEtaIcon/> : 
-                        vehicleType.stringValue === 'Going Bike' ? <DirectionsBikeIcon/> :
-                        vehicleType.stringValue === 'Going Motorcycle' ? <MotorcycleIcon/> :
-                        <BlockIcon/>}
-                  </Button>
-                </Avatar>
-              </ListItemAvatar>
-              <ListItemText
-                primary={
-                  <Typography variant='subtitle2' style={{marginTop:'0rem'}}>
-                    Matrícula 
-                  </Typography>}
-                secondary={
-                  <Typography variant='subtitle2' style={{marginTop:'0rem'}}>
-                    {numPlate}
-                  </Typography>}
-              />
-              <ListItemSecondaryAction>
-                <IconButton 
-                  onClick={()=>go('vehicle')}
-                  disabled={!switchValueVehicle}
-                  style={{marginRight:'-2rem'}}
-                >
-                  <EditIcon/>
-                </IconButton>
-              </ListItemSecondaryAction>
-            </ListItem>
-          </div>
-        </Grid>
+        {switchValueComeInVehicle && 
+          <Grid item xs={12}
+            style={{
+              width:'100%', 
+              maxWidth:'444px', 
+              minWidth:'0', 
+              marginLeft: 'auto',
+              marginRight:'auto', 
+              display: 'block',
+              paddingLeft:'14px',
+              paddingRight:'14px', 
+            }}
+          >
+            <div style={{listStyleType:'none'}}>
+              <Box display='flex' justifyContent='space-between' marginTop='2vh'>
+                <Typography variant='h6'>
+                  Vehículo
+                </Typography>
+              </Box>
+              <ListItem disabled={!switchValueComeInVehicle} disableGutters >
+                <ListItemAvatar>
+                  <Avatar variant='square' style={{borderRadius:'5px', backgroundColor:'#3bbfad', transform:'scale(1.2)', marginLeft:'0.1rem'}}>
+                    <Button disabled={!switchValueComeInVehicle}>
+                      {   vehicleType.stringValue === 'Going Car' ? <DriveEtaIcon/> : 
+                          vehicleType.stringValue === 'Going Bike' ? <DirectionsBikeIcon/> :
+                          vehicleType.stringValue === 'Going Motorcycle' ? <MotorcycleIcon/> :
+                          <BlockIcon/>}
+                    </Button>
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={
+                    <Typography variant='subtitle2' style={{marginTop:'0rem'}}>
+                      Matrícula 
+                    </Typography>}
+                  secondary={
+                    <Typography variant='subtitle2' style={{marginTop:'0rem'}}>
+                      {numPlate}
+                    </Typography>}
+                />
+                <ListItemSecondaryAction>
+                  <IconButton 
+                    onClick={()=>go('vehicle')}
+                    disabled={!switchValueComeInVehicle}
+                    style={{marginRight:'-2rem'}}
+                  >
+                    <EditIcon/>
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </ListItem>
+            </div>
+          </Grid>
+        }
 
 
 

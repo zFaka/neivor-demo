@@ -17,8 +17,7 @@ export const useSwitch = () => {
 
     const {
         variousDays,
-        comeInCar,
-        useVehicle,
+        comeInVehicle,
         companionsTravel
     } = useSelector(state=>state.form);
 
@@ -35,15 +34,9 @@ export const useSwitch = () => {
 
 
     const [
-        switchValueComeInCar,
-        setSwitchValueComeInCar
-    ] = useState(comeInCar);
-
-
-    const [
-        switchValueVehicle,
-        setSwitchValueVehicles
-    ] = useState(useVehicle);
+        switchValueComeInVehicle,
+        setSwitchValueComeInVehicle
+    ] = useState(comeInVehicle);
 
 
     const [
@@ -58,40 +51,29 @@ export const useSwitch = () => {
 
     const switchBooleanEndDate = () => {
         setSwitchValueEndDate(
-            !switchValueEndDate)};
-
-
-
-
-    // Change to a boolean value 
-    // if go or not in a car 
-    
-
-    const switchBooleanComeInCar = () => {
-        setSwitchValueComeInCar(
-            !switchValueComeInCar)};
+            !switchValueEndDate)}
 
 
 
 
     // Change to a boolean value 
     // if go or not in a Vehicle
-   
 
-    const switchBooleanVehicle = () => {
-        setSwitchValueVehicles(
-            !switchValueVehicle)};
+
+    const switchBooleanComeInVehicle = () => {
+        setSwitchValueComeInVehicle(
+            !switchValueComeInVehicle)}
 
 
 
 
     // Change to a boolean value 
     // if it goes with companions
-    
+
 
     const switchBooleanCompanions = () => {
         setSwitchValueCompanions(
-            !switchValueCompanions)};
+            !switchValueCompanions)}
 
 
 
@@ -106,20 +88,18 @@ export const useSwitch = () => {
         // Functions That Return Values
 
         switchValueEndDate,
-        switchValueComeInCar,
-        switchValueVehicle,
+        switchValueComeInVehicle,
         switchValueCompanions,
 
 
         // Functions That Change Values
 
         switchBooleanEndDate,
-        switchBooleanComeInCar, 
-        switchBooleanVehicle,
+        switchBooleanComeInVehicle, 
         switchBooleanCompanions 
 
 
-    ];
+    ]
 
 
 }

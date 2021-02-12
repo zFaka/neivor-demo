@@ -13,12 +13,27 @@ import { types } from '../types/types';
 
 export const sendDataOfPage1 = (
     fullName,
-    dni
+    dni, 
 ) => ({
     type: types.formSubmit,
     payload: {
         fullName,
-        dni
+        dni, 
+    }
+});
+
+
+
+
+// Change index of pages 
+
+
+export const changeIndexPage = (
+    pageIndex
+) => ({
+    type: types.formSubmit,
+    payload: {
+        pageIndex
     }
 });
 
@@ -27,12 +42,13 @@ export const sendDataOfPage1 = (
 
 // Submit data to state
 
+
 export const sendDataOfPage2 = ( 
     variousDays,
     startDate,
     endDate,
     visitType,
-    comeInCar 
+    comeInVehicle, 
 ) => ({
     type: types.formSubmit,
     payload: {
@@ -40,7 +56,8 @@ export const sendDataOfPage2 = (
         startDate,
         endDate,
         visitType,
-        comeInCar}
+        comeInVehicle, 
+    }
 });
 
 
@@ -51,12 +68,15 @@ export const sendDataOfPage2 = (
 
 export const sendDataOfPage3 = (
     vehicleType,
-    numPlate 
+    numPlate, 
+    comeInVehicle, 
 ) => ({
     type: types.formSubmit,
     payload: {
         vehicleType,
-        numPlate}
+        numPlate, 
+        comeInVehicle, 
+    }
 });
 
 
@@ -66,13 +86,13 @@ export const sendDataOfPage3 = (
 
 
 export const sendDataOfPage4 = (
-    comeInCar,
+    comeInVehicle, 
     companionsTravel,
     numberOfCompanions
 ) => ({
     type: types.formSubmit,
     payload: {
-        comeInCar,
+        comeInVehicle, 
         companionsTravel,
         numberOfCompanions}
 });
@@ -94,12 +114,3 @@ export const deleteVehicleData = () => ({
 
 export const deleteEndDateData= () => ({
     type: types.formDeleteEndDateData});
-
-
-
-
-// Delete comeInCar data from state
-
-
-export const deleteComeInCarData = () => ({
-    type: types.formDeleteComeInCarData});

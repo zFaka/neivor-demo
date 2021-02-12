@@ -22,8 +22,9 @@ import {useStyle} from '../../hook/useStyle';
 
 //Actions
 
-import {sendDataOfPage3} from '../../actions/form';
+import {changeIndexPage, sendDataOfPage3} from '../../actions/form';
 import {useValidation} from '../../hook/useValidation';
+import {useSwitch} from '../../hook/useSwitch';
 
 
 
@@ -44,9 +45,17 @@ export const Vehicle = ({navigation}) => {
   ] = useVehicleButtons();
 
   const [
-    validateString, 
-    validateNumber
+    , 
+    validateNumber, 
+    , 
+    , 
+    validateVehicle
   ] = useValidation();
+
+  const [ 
+    ,
+    switchValueComeInVehicle,
+  ] = useSwitch();
 
   const dispatch = useDispatch();
   const classes = useStyle();
@@ -80,8 +89,8 @@ export const Vehicle = ({navigation}) => {
 
   const handleNextPage = () => {
 
-    const vehicleTypeValidationValue = validateString(vehicleValue.stringValue);
     const numberPlateValidationValue = validateNumber(numPlate);
+    const vehicleTypeValidationValue = validateVehicle(vehicleValue.stringValue);
 
     if(
       vehicleTypeValidationValue && 
@@ -89,8 +98,14 @@ export const Vehicle = ({navigation}) => {
     ){
       dispatch(sendDataOfPage3(
         vehicleValue,
-        numPlate))
-      return navigation.next()
+        numPlate, 
+        switchValueComeInVehicle
+      ))
+
+      //change page index
+
+      dispatch(changeIndexPage(4))
+      navigation.next()
     }
   };
 

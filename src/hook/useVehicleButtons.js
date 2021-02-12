@@ -46,7 +46,7 @@ export const useVehicleButtons = () => {
                 motorbike:false, 
             } 
         })
-    };
+    }
 
 
 
@@ -64,7 +64,7 @@ export const useVehicleButtons = () => {
                 bike:true, 
                 motorbike:false
             }
-        });
+        })
     }
 
 
@@ -83,7 +83,7 @@ export const useVehicleButtons = () => {
                 bike:false, 
                 motorbike:true
             }
-        });
+        })
     }
 
 
@@ -99,7 +99,7 @@ export const useVehicleButtons = () => {
         chooseCar,
         chooseBike,
         chooseMotocycle
-    ];
+    ]
 
 
 }

@@ -49,7 +49,7 @@ export const usePersonalForm = () => {
 
     const reset = (initialState) => {
         setValues(initialState)
-    };
+    }
 
 
 
@@ -64,7 +64,7 @@ export const usePersonalForm = () => {
             ...values,
             [ target.name ]: target.value
         })
-    };
+    }
 
 
 
@@ -75,7 +75,7 @@ export const usePersonalForm = () => {
         setStartDateValue({
             startDate:date
         })
-    };
+    }
 
 
 
@@ -86,7 +86,7 @@ export const usePersonalForm = () => {
         setEndDateValue({
             endDate:date
         })
-    };
+    }
 
 
 
@@ -111,5 +111,5 @@ export const usePersonalForm = () => {
         endDateValue,
         handleStartDatePickerChange,
         handleEndDatePickerChange
-    ];
+    ]
 }

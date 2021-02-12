@@ -15,13 +15,13 @@ import {useStyle} from '../../hook/useStyle';
 
 //Actions
 
-import {deleteEndDateData, sendDataOfPage2} from '../../actions/form';
+import {changeIndexPage, deleteEndDateData, deleteVehicleData, sendDataOfPage2} from '../../actions/form';
 import {useValidation} from '../../hook/useValidation';
 
 
 
 
-export const Public = ({ navigation}) => {
+export const Public = ({navigation}) => {
 
 
 
@@ -34,6 +34,14 @@ export const Public = ({ navigation}) => {
 
 
 
+  // Destructiring go function 
+
+
+  const {go} = navigation;
+
+
+
+
   // leave the functions handy 
 
 
@@ -42,11 +50,11 @@ export const Public = ({ navigation}) => {
 
   const [
     switchValueEndDate,
-    switchValueComeInCar, 
-    ,
-    ,
+    switchValueComeInVehicle, 
+    , 
+
     switchBooleanEndDate,
-    switchBooleanComeInCar
+    switchBooleanComeInVehicle
   ] = useSwitch();
   const [
     , 
@@ -65,6 +73,7 @@ export const Public = ({ navigation}) => {
 
 
   const [
+
     formLoginValues,
     handleInputChange, 
     , 
@@ -72,6 +81,7 @@ export const Public = ({ navigation}) => {
     endDateValue, 
     handleStartDatePickerChange, 
     handleEndDatePickerChange
+
   ] = usePersonalForm({
     visitType:'', 
   });
@@ -115,8 +125,20 @@ export const Public = ({ navigation}) => {
         startDateValue.startDate,
         endDateValue.endDate,
         visitType,
-        switchValueComeInCar))
-      return navigation.next()
+        switchValueComeInVehicle, 
+      ))
+
+      if(switchValueComeInVehicle){
+        dispatch(changeIndexPage(3))
+        go('vehicle')
+      } else {
+
+        // Change page index
+
+        dispatch(changeIndexPage(4))
+        dispatch(deleteVehicleData())
+        go('check')
+      }
     }
 
   };
@@ -189,47 +211,37 @@ export const Public = ({ navigation}) => {
         {/*  Date picker box */}
 
 
-        <Grid container style={{display:'flex', justifyContent:'left', marginTop:'5.3vh'}}>
-
-
-
-
+        <div style={{display:'flex',justifyContent:'space-between',  marginTop:'5.3vh'}}>
           {/*  Start date input  */}
-
-
-          <Grid item xs={switchValueEndDate ? 6 : 12} style={{transition:'0.3s ease'}}>
-            <KeyboardDatePicker
-              className='date start-date'
-              variant='outlined'
-              id="date-picker-dialog-1" 
-              label="Dia de inicio" 
-              format='dd/MM/yyyy'
-              value={startDateValue.startDate}
-              onChange={handleStartDatePickerChange}
-              KeyboardButtonProps={{
-                'aria-label': 'change date',}}/>
-          </Grid>
-
-
-
-
+          <KeyboardDatePicker
+            style={{
+              transition:'0.3s ease', 
+              marginRight:`${!switchValueEndDate ? '0' : '5px'}`,
+              width:'100%'
+            }}
+            className='date start-date'
+            variant='outlined'
+            label="Dia de inicio" 
+            format='dd/MM/yyyy'
+            value={startDateValue.startDate}
+            onChange={handleStartDatePickerChange}
+            KeyboardButtonProps={{
+              'aria-label': 'change date',}}/>
           {/*  End date input  */}
-
-
-          <Grid item xs={6} 
-            style={{display:`${!switchValueEndDate ? 'none' : ''}`}}
-          >
-            <KeyboardDatePicker
-              className='date end-date'
-              id="date-picker-dialog-2"
-              label="Dia de fin"
-              format='dd/MM/yyyy'
-              value={endDateValue.endDate}
-              onChange={handleEndDatePickerChange}
-              KeyboardButtonProps={{
-                'aria-label': 'change date',}}/>
-          </Grid>
-        </Grid>
+          <KeyboardDatePicker
+            style={{
+              display:`${!switchValueEndDate ? 'none' : ''}`,
+              marginLeft:`${!switchValueEndDate ? '0' : '5px'}`, 
+              width:'100%',
+            }}
+            className={`date end-date ${!switchValueEndDate ? 'date-out' : 'date-in'}`}
+            label="Dia de fin"
+            format='dd/MM/yyyy'
+            value={endDateValue.endDate}
+            onChange={handleEndDatePickerChange}
+            KeyboardButtonProps={{
+              'aria-label': 'change date',}}/>
+        </div>
 
 
 
@@ -265,13 +277,13 @@ export const Public = ({ navigation}) => {
 
         <Box display='flex' justifyContent='space-between' marginTop='3vh' marginBottom='0'>
           <Typography variant='caption' style={{marginTop:'0.6rem'}}>
-            ¿Viene en coche?
+            ¿Viene en un vehículo?
           </Typography>
 
           <Switch 
             color='primary'
-            checked={switchValueComeInCar}
-            onChange={switchBooleanComeInCar}
+            checked={switchValueComeInVehicle}
+            onChange={switchBooleanComeInVehicle}
 
             classes={{
               root: classes.root,

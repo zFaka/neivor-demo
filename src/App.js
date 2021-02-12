@@ -55,7 +55,7 @@ function App() {
         </Provider>
       </MuiPickersUtilsProvider>
     </MuiThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

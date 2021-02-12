@@ -14,7 +14,7 @@ import {useStyle} from '../../hook/useStyle';
 
 // Actions
 
-import {sendDataOfPage1} from '../../actions/form'; 
+import {changeIndexPage, sendDataOfPage1} from '../../actions/form'; 
 import {useValidation} from '../../hook/useValidation';
 
 
@@ -62,14 +62,18 @@ export const Personal = ({navigation}) => {
 
   const handleNextPage = () => {
 
-    const stringValidationValue = validateString(fullName);
     const numberValidationValue = validateNumber(dni);
+    const stringValidationValue = validateString(fullName);
 
     if(
       stringValidationValue && 
       numberValidationValue
     ){
       dispatch(sendDataOfPage1(fullName, dni))
+
+      // Change page index
+
+      dispatch(changeIndexPage(2))
       navigation.next()
     }
 

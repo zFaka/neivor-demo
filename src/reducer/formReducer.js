@@ -11,6 +11,10 @@ const initialState = {
   // Data requested on: 
 
 
+  // All pages
+  pageIndex:1, 
+
+
   // Page 1 
 
   fullName:'',
@@ -23,7 +27,7 @@ const initialState = {
   startDate:new Date(), 
   endDate:new Date(), 
   visitType:'', 
-  comeInCar:true, 
+  comeInVehicle:true, 
 
 
   // Page 3 
@@ -39,7 +43,6 @@ const initialState = {
 
   // Page 4 
 
-  useVehicle:true, 
   companionsTravel:true, 
   numberOfCompanions:0, 
   isFavourite:false, 
@@ -92,7 +95,7 @@ export const formReducer = ( state = initialState, action ) => {
       // Return the same data
 
     default:
-      return state;
+      return state
   }
 
 }

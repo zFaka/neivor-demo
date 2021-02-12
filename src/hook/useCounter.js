@@ -26,7 +26,7 @@ export const useCounter = () => {
     const [
         counterValue,
         setCounterValue
-    ] = useState(numberOfCompanions);
+    ] = useState(numberOfCompanions)
 
 
 
@@ -35,7 +35,7 @@ export const useCounter = () => {
 
 
     const reset = () => {
-        setCounterValue(0)};
+        setCounterValue(0)}
 
 
 
@@ -44,7 +44,7 @@ export const useCounter = () => {
 
 
     const handleIncrease = () => {
-        setCounterValue(counterValue+1)};
+        setCounterValue(counterValue+1)}
 
 
 
@@ -72,7 +72,7 @@ export const useCounter = () => {
         handleIncrease,
         handleDecrease,
         reset
-    ];
+    ]
 
 
 }
