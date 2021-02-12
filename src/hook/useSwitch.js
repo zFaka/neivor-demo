@@ -46,8 +46,10 @@ export const useSwitch = () => {
 
 
 
+
     // Change to a boolean value 
     // if visiting or not multiple days 
+
 
     const switchBooleanEndDate = () => {
         setSwitchValueEndDate(

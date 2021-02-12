@@ -31,13 +31,13 @@ export const Submit = () => {
 
 
   const downloadQR = () => {
-    const canvas = document.getElementById("123456");
+    const canvas = document.getElementById(`${fullName}${dni}`);
     const pngUrl = canvas
       .toDataURL("image/png")
       .replace("image/png", "image/octet-stream");
     let downloadLink = document.createElement("a");
     downloadLink.href = pngUrl;
-    downloadLink.download = "123456.png";
+    downloadLink.download = "qr-code.png";
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink)};
@@ -80,34 +80,43 @@ export const Submit = () => {
 
 
 
-        {/*  Form finished header  */}
+      {/*  Form finished header  */}
 
 
-          <Typography
-            align='center'
-            style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'0vh', marginTop:'3.6vh', fontSize:'5vh', color:'#4b4f54'}}
-          >
-            ¡{fullName.replace(/ .*/,'')} ya está listo!
-          </Typography>
+      <Typography
+        align='center'
+        style={{
+          letterSpacing:'1.5px',
+          fontWeight:'600',
+          marginBottom:'0vh',
+          marginTop:'3.6vh',
+          fontSize:'5vh',
+          color:'#4b4f54'}}
+      >
+        ¡{fullName.replace(/ .*/,'')} ya está listo!
+      </Typography>
 
       <div
-          style={{
-            width:'85%', 
-            maxWidth:'70vw', 
-            minWidth:'0', 
-            marginLeft: 'auto',
-            marginRight:'auto', 
-            display: 'block',
-            paddingLeft:'10px',
-            paddingRight:'10px', 
-          }}
+        style={{
+          width:'85%', 
+          maxWidth:'70vw', 
+          minWidth:'0', 
+          marginLeft: 'auto',
+          marginRight:'auto', 
+          display: 'block',
+          paddingLeft:'10px',
+          paddingRight:'10px', 
+        }}
       >
-          <Typography
-            align='center'
-            style={{fontWeight:'500', fontSize:'2.2vh', color:'#66696d'}}
-          >
-            Necesitara este codigo para poder ingresar al condominio, recuerda enviarlo
-          </Typography>
+        <Typography
+          align='center'
+          style={{
+          fontWeight:'500',
+          fontSize:'2.2vh',
+          color:'#66696d'}}
+        >
+          Necesitara este codigo para poder ingresar al condominio, recuerda enviarlo
+        </Typography>
       </div>
 
 
@@ -121,7 +130,10 @@ export const Submit = () => {
         {/*  Generate QRCode  */}
 
 
-        <div style={{display:'flex', justifyContent:'center', marginTop:'6vh'}}>
+        <div style={{
+          display:'flex',
+          justifyContent:'center',
+          marginTop:'6vh'}}>
           <QRCode 
             id={`${fullName}${dni}`} 
             level={"H"}
@@ -135,7 +147,10 @@ export const Submit = () => {
              Download, Email       */}
 
 
-        <div style={{display:'flex', justifyContent:'space-around', marginTop:'5.5vh'}}>
+        <div style={{
+          display:'flex',
+          justifyContent:'space-around',
+          marginTop:'5.5vh'}}>
           <div>
 
 
@@ -148,7 +163,9 @@ export const Submit = () => {
             <IconButton onClick={shareForWhatsapp}>
               <WhatsAppIcon 
                 fontSize='large'
-                style={{color:'black', transform:'scale(1.3)'}}/>
+                style={{
+              color:'black',
+              transform:'scale(1.3)'}}/>
             </IconButton>
 
 
@@ -161,7 +178,9 @@ export const Submit = () => {
             <IconButton onClick={downloadQR}>
               <GetAppIcon 
                 fontSize='large'
-                style={{color:'black', transform:'scale(1.3)'}}/>
+                style={{
+              color:'black',
+              transform:'scale(1.3)'}}/>
             </IconButton>
 
 
@@ -174,7 +193,9 @@ export const Submit = () => {
             <IconButton onClick={shareForEmail}>
               <DraftsIcon 
                 fontSize='large'
-                style={{color:'black', transform:'scale(1.3)'}}/>
+                style={{
+              color:'black',
+              transform:'scale(1.3)'}}/>
             </IconButton>
 
 

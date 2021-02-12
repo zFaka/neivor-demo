@@ -26,7 +26,7 @@ import {useStyle} from '../../hook/useStyle';
 
 // Actions
 
-import {changeIndexPage, deleteVehicleData, sendDataOfPage4} from '../../actions/form';
+import {changeIndexPage, sendDataOfPage4} from '../../actions/form';
 import Swal from 'sweetalert2';
 
 
@@ -87,21 +87,9 @@ export const Check = ({navigation}) => {
     switchValueComeInVehicle,
     switchValueCompanions,
     ,
-    switchBooleanComeInVehicle,
+    ,
     switchBooleanCompanions
   ] = useSwitch();
-
-
-
-
-  // disableVehicle when called,
-  // dispatches the action which 
-  // delete vehicle data from the store 
-  // and goes to the next page
-
-
-  const disableVehicle = () => {
-    dispatch(deleteVehicleData())};
 
 
 
@@ -200,7 +188,7 @@ export const Check = ({navigation}) => {
 
 
         {/*  Vehicle box
-        show vehicle bos if use vehicle */}
+        show if use vehicle */}
 
 
         {switchValueComeInVehicle && 

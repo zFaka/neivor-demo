@@ -3,9 +3,6 @@ import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import {createMuiTheme, MuiThemeProvider} from "@material-ui/core";
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-
-
-// pick a date util library
 import DateFnsUtils from '@date-io/date-fns';
 
 
@@ -34,17 +31,17 @@ const theme = createMuiTheme({
       main:'#ff7172', 
       contrastText:'#fff'
     }
-  }, 
-  cssLabel: {
-    marginTop:'-6px',
   },
+
 })
+
 
 
 
 // This functions provide theme,
 // the picker utils and the
 // tree state to all the components
+
 
 function App() {
   return (

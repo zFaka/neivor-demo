@@ -104,9 +104,9 @@ export const Public = ({navigation}) => {
 
 
   // handleNextPage when called,
-  // dispatches the action which 
-  // uploads the data to the store 
-  // and goes to the next page
+  // validate data, dispatches the
+  // action which uploads the data to 
+  // the store and goes to the next page
 
 
   const handleNextPage = () => {

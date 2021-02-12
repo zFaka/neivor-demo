@@ -82,9 +82,10 @@ export const Vehicle = ({navigation}) => {
 
 
   // handleNextPage when called,
-  // dispatches the action which 
-  // uploads the data to the store 
-  // and goes to the next page
+  // validate inputs, dispatches 
+  // the action which uploads the 
+  // data to the store change index
+  // page and goes to the next page
 
 
   const handleNextPage = () => {
@@ -130,7 +131,14 @@ export const Vehicle = ({navigation}) => {
 
       <Typography
         align='center'
-        style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'8vh', marginTop:'3.4vh', fontSize:'5vh', color:'#4b4f54'}}
+        className='header page-1'
+        style={{
+          letterSpacing:'1.5px',
+          fontWeight:'600',
+          marginBottom:'8vh',
+          marginTop:'3.4vh',
+          fontSize:'5vh',
+          color:'#4b4f54'}}
       >
         ¿Qué vehículo usa?
       </Typography>
@@ -146,10 +154,11 @@ export const Vehicle = ({navigation}) => {
         {/*  Vehicles buttons  */}
 
 
-        <div style={{
-          marginBottom:'5vh',
-          display:'flex',
-          justifyContent:'space-between'}}
+        <div 
+          style={{
+            marginBottom:'5vh',
+            display:'flex',
+            justifyContent:'space-between'}}
         >
           <Button
             onClick={chooseCar}
