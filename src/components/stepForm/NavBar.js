@@ -90,7 +90,11 @@ export const NavBar = ({navigation}) => {
 
 
   return (
-    <AppBar color='secondary' position="static" style={{letterSpacing:'1px', boxShadow:'0px -15px 30px 7px black'}}>
+    <AppBar 
+      color='secondary' 
+      position="static" 
+      className='app-bar'
+    >
       <Toolbar>
 
 

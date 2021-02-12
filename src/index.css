@@ -11,6 +11,13 @@ body {
 
 
 
+/*App Bar*/
+.app-bar{
+  letter-spacing:1px;
+  box-shadow:0px -15px 30px 7px black;
+}
+
+
 
 /*Progress bar*/
 
@@ -69,9 +76,12 @@ body {
 }
 
 .MuiSwitch-thumb{
-  border: 1px solid #4bc0b0;
+  border: 1px solid #ff7172;
   color: white;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+.MuiSwitch-track{
+    opacity: 1 !important;
 }
 
 /*check switches*/
@@ -130,5 +140,5 @@ margin-top:-6px;}
 
 
 .header{
-    
+
 }
