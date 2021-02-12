@@ -100,7 +100,7 @@ export const Personal = ({navigation}) => {
 
       <Typography 
         align='center' 
-        className='page-1-header'
+        className='header page-1-header'
       >
         Datos de la visita
       </Typography>

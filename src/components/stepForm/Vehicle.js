@@ -151,15 +151,14 @@ export const Vehicle = ({navigation}) => {
           className='box vehicle-box'
         >
           <Button
+            className='car'
             onClick={chooseCar}
 
             style={{
 
               backgroundColor:`${vehicleValue.booleanValue.car ?'#3bbfad':'white'}`, 
               border:`1px solid ${vehicleValue.booleanValue.car ?'#35ac9b':'black'}`, 
-
-              borderRadius:'5px', 
-              padding:'0'}}
+            }}
           >
             <DriveEtaIcon
               style={{
@@ -168,15 +167,14 @@ export const Vehicle = ({navigation}) => {
           </Button>
 
           <Button
+            className='bike'
             onClick={chooseBike}
 
             style={{
 
               backgroundColor:`${vehicleValue.booleanValue.bike ?'#3bbfad':'white'}`, 
               border:`1px solid ${vehicleValue.booleanValue.bike ?'#35ac9b':'black'}`, 
-
-              padding:'10px', 
-              borderRadius:'5px'}}
+            }}
           >
             <DirectionsBikeIcon
               style={{fontSize: 'max(12vh, 45px)'}}
@@ -184,6 +182,7 @@ export const Vehicle = ({navigation}) => {
           </Button>
 
           <Button
+            className='motorcycle'
             onClick={chooseMotorcycle}
 
             style={{
