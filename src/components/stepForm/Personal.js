@@ -98,7 +98,10 @@ export const Personal = ({navigation}) => {
       {/*  Personal info header  */}
 
 
-      <Typography align='center' style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'6vh', marginTop:'3.4vh', fontSize:'5vh', color:'#4b4f54'}}>
+      <Typography 
+        align='center' 
+        className='page-1-header'
+      >
         Datos de la visita
       </Typography>
 
@@ -135,6 +138,7 @@ export const Personal = ({navigation}) => {
 
 
         <TextField
+          className='dni-input'
           autoComplete='off'
           type="number"
           name='dni'
@@ -144,7 +148,6 @@ export const Personal = ({navigation}) => {
             classes: {
               root: classes.cssLabel}}}
 
-          style={{marginTop:'5vh', color:'black'}}
           label='DNI'
           variant='outlined'
           fullWidth
@@ -164,16 +167,7 @@ export const Personal = ({navigation}) => {
 
 
       <Grid item xs={12}
-        style={{
-          position: 'fixed',
-          width:'100%', 
-          maxWidth:'396px', 
-          minWidth:'0', 
-          paddingLeft:'18px', 
-          paddingRight:'18px',
-          left: '50%',
-          top: '90%',
-          transform: 'translate(-50%, -50%)'}}
+        className='next-page-button'
       >
         <Button
           onClick={handleNextPage}

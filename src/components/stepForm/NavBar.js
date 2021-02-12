@@ -108,8 +108,11 @@ export const NavBar = ({navigation}) => {
 
         { pageIndex !== 5 && 
 
-          <IconButton edge="start" color="inherit" aria-label="back" 
-            style={{marginLeft:'-1rem'}}
+          <IconButton 
+            edge="start"
+            color="inherit"
+            aria-label="back" 
+            className='app-bar-icon-button'
             onClick={handleBackPage}
           >
             <ArrowBack 

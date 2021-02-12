@@ -12,9 +12,77 @@ body {
 
 
 /*App Bar*/
+
 .app-bar{
   letter-spacing:1px;
   box-shadow:0px -15px 30px 7px black;
+}
+
+.app-bar-icon-button{
+  margin-left:-1rem !important;
+}
+
+.next-page-button{
+  position: fixed !important;
+  width:100% !important;
+  max-width:396px !important;
+  min-width:0 !important;
+  padding-left:18px !important;
+  padding-right:18px !important;
+  left:50% !important;
+  top:90% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.header{
+  letter-spacing:1.5px !important;
+  font-weight:600 !important;
+  margin-top:3.4vh !important;
+  font-size:5vh !important;
+  color:#4b4f54 !important;
+}
+
+.page-1-header{
+  margin-bottom:6vh !important;
+}
+
+.page-2-header{
+  margin-bottom:3vh !important;
+}
+
+.page-3-header{
+  margin-bottom:8vh !important;
+}
+
+.dni-input{
+  margin-top:5vh!important;
+  color:black!important;
+}
+
+.come-in-vehicle{
+  margin-top:0.6rem !important;
+}
+
+.box{
+  display:flex !important;
+  justify-content:space-between !important;
+}
+
+.vehicle-box{
+  margin-bottom:5vh;
+}
+
+.date-picker-box{
+  margin-top:5.3vh !important;
+}
+
+.date-picker{
+  transition:0.3s ease!important;
+  width:100%!important;
+}
+
+.selector{
+  margin-top: 5.3vh!important; 
 }
 
 
@@ -81,7 +149,7 @@ body {
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 .MuiSwitch-track{
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 /*check switches*/

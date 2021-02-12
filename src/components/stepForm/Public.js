@@ -165,7 +165,7 @@ export const Public = ({navigation}) => {
 
       <Typography
         align='center'
-        style={{letterSpacing:'1.5px', fontWeight:'600', marginBottom:'3vh', marginTop:'3.4vh', fontSize:'5vh', color:'#4b4f54'}}
+        className='header page-2-header'
       >
         Algunos datos más
       </Typography>
@@ -185,7 +185,10 @@ export const Public = ({navigation}) => {
 
 
         <Box display='flex' justifyContent='space-between'>
-          <Typography variant='caption' style={{marginTop:'0.6rem'}}>
+          <Typography 
+            variant='caption'
+            className='come-in-vehicle'
+          >
             Visita de varios dias
           </Typography>
           <Switch
@@ -211,15 +214,18 @@ export const Public = ({navigation}) => {
         {/*  Date picker box */}
 
 
-        <div style={{display:'flex',justifyContent:'space-between',  marginTop:'5.3vh'}}>
+        <div className='box date-picker-box'>
+
+
+
           {/*  Start date input  */}
+
+
           <KeyboardDatePicker
             style={{
-              transition:'0.3s ease', 
               marginRight:`${!switchValueEndDate ? '0' : '5px'}`,
-              width:'100%'
             }}
-            className='date start-date'
+            className='date start-date date-picker'
             variant='outlined'
             label="Dia de inicio" 
             format='dd/MM/yyyy'
@@ -232,9 +238,8 @@ export const Public = ({navigation}) => {
             style={{
               display:`${!switchValueEndDate ? 'none' : ''}`,
               marginLeft:`${!switchValueEndDate ? '0' : '5px'}`, 
-              width:'100%',
             }}
-            className={`date end-date ${!switchValueEndDate ? 'date-out' : 'date-in'}`}
+            className={`date-picker date end-date ${!switchValueEndDate ? 'date-out' : 'date-in'}`}
             label="Dia de fin"
             format='dd/MM/yyyy'
             value={endDateValue.endDate}
@@ -249,7 +254,11 @@ export const Public = ({navigation}) => {
         {/*  Type of visit selector  */}
 
 
-        <FormControl fullWidth variant="outlined" style={{marginTop:'5.3vh'}}>
+        <FormControl 
+          fullWidth 
+          variant="outlined" 
+          className='selector'
+        >
           <InputLabel className='inmg'>
             Tipo de visita
           </InputLabel>
@@ -276,7 +285,10 @@ export const Public = ({navigation}) => {
 
 
         <Box display='flex' justifyContent='space-between' marginTop='3vh' marginBottom='0'>
-          <Typography variant='caption' style={{marginTop:'0.6rem'}}>
+          <Typography 
+            variant='caption'
+            className='come-in-vehicle'
+          >
             ¿Viene en un vehículo?
           </Typography>
 
@@ -310,16 +322,7 @@ export const Public = ({navigation}) => {
 
 
       <Grid item xs={12}
-        style={{
-          position: 'fixed',
-          width:'100%', 
-          maxWidth:'396px', 
-          minWidth:'0', 
-          paddingLeft:'18px', 
-          paddingRight:'18px',
-          left: '50%',
-          top: '90%',
-          transform: 'translate(-50%, -50%)'}}
+        className='next-page-button'
       >
         <Button
           onClick={handleNextPage}

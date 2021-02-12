@@ -131,14 +131,7 @@ export const Vehicle = ({navigation}) => {
 
       <Typography
         align='center'
-        className='header page-1'
-        style={{
-          letterSpacing:'1.5px',
-          fontWeight:'600',
-          marginBottom:'8vh',
-          marginTop:'3.4vh',
-          fontSize:'5vh',
-          color:'#4b4f54'}}
+        className='header page-3-header'
       >
         ¿Qué vehículo usa?
       </Typography>
@@ -155,10 +148,7 @@ export const Vehicle = ({navigation}) => {
 
 
         <div 
-          style={{
-            marginBottom:'5vh',
-            display:'flex',
-            justifyContent:'space-between'}}
+          className='box vehicle-box'
         >
           <Button
             onClick={chooseCar}
@@ -246,16 +236,7 @@ export const Vehicle = ({navigation}) => {
 
 
       <Grid item xs={12}
-        style={{
-          position: 'fixed',
-          width:'100%', 
-          maxWidth:'396px', 
-          minWidth:'0', 
-          paddingLeft:'18px', 
-          paddingRight:'18px',
-          left: '50%',
-          top: '90%',
-          transform: 'translate(-50%, -50%)'}}
+        className='next-page-button'
       >
         <Button
           onClick={handleNextPage}

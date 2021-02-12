@@ -379,16 +379,7 @@ export const Check = ({navigation}) => {
 
 
       <Grid item xs={12}
-        style={{
-          position: 'fixed',
-          width:'100%', 
-          maxWidth:'396px', 
-          minWidth:'0', 
-          paddingLeft:'18px', 
-          paddingRight:'18px',
-          left: '50%',
-          top: '90%',
-          transform: 'translate(-50%, -50%)'}}
+        className='next-page-button'
       >
         <Button
           onClick={handleNextPage}
